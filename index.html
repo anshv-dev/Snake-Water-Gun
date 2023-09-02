@@ -10,32 +10,34 @@
     <div class="container">
         <!--APPROACH USED-> FUNCTIONS-->
 
-    <p class="title">Rock Paper Scissors</p>
+    <p class="title">SNAKE WATER GUN</p>
     <button class="move-btn" onclick="
       
     pick();
-    playgame('rock');
-
+    playgame('snake');
+    audio1.play();
     // comparing our move with the computer
 
     "
-    ><img src="img/rock-emoji.png" alt="rock"></button>
+    ><img src="img/snake.png" alt="snake"></button>
 
     <button class="move-btn" onclick="
 
     pick();
-    playgame('paper');
+    playgame('water');
+    audio2.play();
     // comparing our move with the computer
     
-    "><img src="img/paper-emoji.png" alt="paper"></button>
+    "><img src="img/water.png" alt="water"></button>
     
     <button class="move-btn" onclick="
 
     pick();
-    playgame('scissors')
+    playgame('gun')
+    audio3.play();
     // comparing our move with the computer
     
-    "><img src="img/scissors-emoji.png" alt="scissors"></button>
+    "><img src="img/gun.png" alt="gun"></button>
 
     <p class="js-result result"></p>
     <p class="js-moves">
@@ -48,7 +50,8 @@
         score.losses=0;
         score.ties=0;
         localStorage.removeItem('score')
-        updatescore()   //note- here,when we use this function it will makes the score null that the score object will not exist.
+        updatescore() 
+        audio4.play();  //note- here,when we use this function it will makes the score null that the score object will not exist.
         " class="reset-score">Reset Score</button>
     </div>
     

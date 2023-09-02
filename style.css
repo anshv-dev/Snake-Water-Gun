@@ -1,7 +1,7 @@
 body{
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(61, 147, 200);
 }
 
 .title{
@@ -15,8 +15,8 @@ img{
 }
 
 .move-btn{
-  /* border: solid; */
-  /* border-color: white; */
+  border: solid;
+  border-color: rgb(28, 42, 42);
   border-radius: 100px;
   width: 120px;
   height: 120px;
@@ -35,11 +35,14 @@ img{
 }
 
 .reset-score{
-  background-color: white;
-  border: none;
+  background-color: transparent;
+  border: solid;
   font-size: 15px;
   padding: 8px 15px;
   cursor: pointer;
+  color: white;
+  border-radius: 30px;
+  border-color: rgb(28, 42, 42);
 }
 .container{
   text-align: center;

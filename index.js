@@ -13,29 +13,29 @@ let result='';
 function playgame(playerMove){
   
   
-  if(playerMove==='scissors'){
-      if(computerMove==='rock'){
-    result='You Lose';
-  }else if(computerMove==='paper'){
+  if(playerMove==='gun'){
+      if(computerMove==='snake'){
     result='You Win';
-  }else if(computerMove==='scissors'){
+  }else if(computerMove==='water'){
+    result='You Lose';
+  }else if(computerMove==='gun'){
     result='Tie';
   }
-  }else if(playerMove==='paper'){
-      if(computerMove==='rock'){
-    result='You Win';
-  }else if(computerMove==='paper'){
-    result='Tie';
-  }else if(computerMove==='scissors'){
+  }else if(playerMove==='water'){
+      if(computerMove==='snake'){
     result='You Lose';
+  }else if(computerMove==='water'){
+    result='Tie';
+  }else if(computerMove==='gun'){
+    result='You Win';
   }
-  }else if(playerMove==='rock'){
-      if(computerMove==='rock'){
+  }else if(playerMove==='snake'){
+      if(computerMove==='snake'){
     result='Tie';
-  }else if(computerMove==='paper'){
-    result='You Lose';
-  }else if(computerMove==='scissors'){
+  }else if(computerMove==='water'){
     result='You Win';
+  }else if(computerMove==='gun'){
+    result='You Lose';
   }
   }
 
@@ -53,8 +53,9 @@ localStorage.setItem('score',JSON.stringify(score));
 updatescore()
 document.querySelector('.js-result').innerHTML=result
 document.querySelector('.js-moves').innerHTML=`      You
-<img src="img/${playerMove}-emoji.png">
-<img src="img/${computerMove}-emoji.png">
+<img src="img/${playerMove}.png">
+<img src="img/${computerMove}.png">
+
 Computer`
 
 // alert(`You picked ${playerMove}.Computer picked ${computerMove}.${result}
@@ -72,11 +73,11 @@ Computer`
     const random = Math.random();
 
   if(random>=0 && random<=1/3){
-    computerMove='rock';
+    computerMove='snake';
   } else if(random >= 1/3 && random< 2/3){
-    computerMove='paper';
+    computerMove='water';
   } else if( random >= 2/3 && random < 1){
-    computerMove='scissors';
+    computerMove='gun';
   }
   console.log(computerMove);
     }
@@ -88,4 +89,20 @@ Computer`
  .innerHTML=`Wins:${score.wins},Losses:${score.losses},Ties:${score.ties}`
   }  
 
-  updatescore()
+  updatescore();
+
+  //snake sound.
+  const audio1=new Audio();
+  audio1.src="sounds/snake.mp3"
+
+  //water sound.
+  const audio2=new Audio();
+  audio2.src="sounds/water.mp3"
+  
+  //gun sound.
+  const audio3=new Audio();
+  audio3.src="sounds/gun.mp3"
+
+  //restart sound.
+  const audio4=new Audio();
+  audio4.src="sounds/restart.wav"
